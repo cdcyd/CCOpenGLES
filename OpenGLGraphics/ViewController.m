@@ -18,11 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dataSource = @[@[@"TriangleGLSLViewController.三角形  GLSL",
-                          @"TriangleAnimationGLSLViewController.三角形Animation  GLSL",
+                          @"TriangleAnimationGLSLViewController.三角形  Animation  GLSL",
                           @"QuadrilateralGLSLViewController.四边形  GLSL",
                           @"TextureGLSLViewController.纹    理  GLSL"],
                         @[@"TriangleViewController.三角形  GLKit",
-                          @"TriangleAnimationViewController.三角形Animation  GLKit",
+                          @"TriangleAnimationViewController.三角形  Animation  GLKit",
                           @"QuadrilateralViewController.四边形  GLKit",
                           @"TextureViewController.纹    理  GLKit"]];
     [[UITableViewHeaderFooterView appearance] setTintColor:[UIColor colorWithRed:0xeb/255.f green:0xf5/255.f blue:0xff/255.f alpha:1]];

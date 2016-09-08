@@ -24,6 +24,9 @@
 		7CA2A4F11D542E1E004549F2 /* FragmentShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2A4F01D542E1E004549F2 /* FragmentShader.glsl */; };
 		7CA2A4F51D542E76004549F2 /* TriangleGLSLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2A4F41D542E76004549F2 /* TriangleGLSLViewController.m */; };
 		7CB8B4791D5D667800776C76 /* www.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8B4781D5D667800776C76 /* www.png */; };
+		7CE3584A1D8131D80014C215 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7CE358481D8131D80014C215 /* Shader.fsh */; };
+		7CE3584B1D8131D80014C215 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 7CE358491D8131D80014C215 /* Shader.vsh */; };
+		7CE3584E1D8132040014C215 /* TextureGLSLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE3584D1D8132040014C215 /* TextureGLSLViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,10 @@
 		7CA2A4F31D542E76004549F2 /* TriangleGLSLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleGLSLViewController.h; sourceTree = "<group>"; };
 		7CA2A4F41D542E76004549F2 /* TriangleGLSLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleGLSLViewController.m; sourceTree = "<group>"; };
 		7CB8B4781D5D667800776C76 /* www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = www.png; sourceTree = "<group>"; };
+		7CE358481D8131D80014C215 /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		7CE358491D8131D80014C215 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
+		7CE3584C1D8132040014C215 /* TextureGLSLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureGLSLViewController.h; sourceTree = "<group>"; };
+		7CE3584D1D8132040014C215 /* TextureGLSLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureGLSLViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +242,8 @@
 		7C62AD4B1D5C176200ECDF17 /* TextureGLSL */ = {
 			isa = PBXGroup;
 			children = (
+				7CE3584C1D8132040014C215 /* TextureGLSLViewController.h */,
+				7CE3584D1D8132040014C215 /* TextureGLSLViewController.m */,
 			);
 			name = TextureGLSL;
 			sourceTree = "<group>";
@@ -258,6 +267,8 @@
 		7CA2A4ED1D542DC0004549F2 /* GLSL */ = {
 			isa = PBXGroup;
 			children = (
+				7CE358481D8131D80014C215 /* Shader.fsh */,
+				7CE358491D8131D80014C215 /* Shader.vsh */,
 				7CA2A4EE1D542E04004549F2 /* VertexShader.glsl */,
 				7CA2A4F01D542E1E004549F2 /* FragmentShader.glsl */,
 			);
@@ -376,11 +387,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE3584B1D8131D80014C215 /* Shader.vsh in Resources */,
 				7C42E7B11D52E5B0003764F8 /* LaunchScreen.storyboard in Resources */,
 				7CB8B4791D5D667800776C76 /* www.png in Resources */,
 				7C42E7AE1D52E5B0003764F8 /* Assets.xcassets in Resources */,
 				7CA2A4EF1D542E04004549F2 /* VertexShader.glsl in Resources */,
 				7C42E7A91D52E5B0003764F8 /* Main.storyboard in Resources */,
+				7CE3584A1D8131D80014C215 /* Shader.fsh in Resources */,
 				7CA2A4F11D542E1E004549F2 /* FragmentShader.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +425,7 @@
 				7C42E7DC1D531B9B003764F8 /* QuadrilateralViewController.m in Sources */,
 				7CA2A4F51D542E76004549F2 /* TriangleGLSLViewController.m in Sources */,
 				7C42E7A31D52E5B0003764F8 /* AppDelegate.m in Sources */,
+				7CE3584E1D8132040014C215 /* TextureGLSLViewController.m in Sources */,
 				7C42E7D81D52ED12003764F8 /* TriangleViewController.m in Sources */,
 				7C42E7A01D52E5B0003764F8 /* main.m in Sources */,
 				7C8A7BF31D5DCAC100486DE8 /* TriangleAnimationViewController.m in Sources */,
