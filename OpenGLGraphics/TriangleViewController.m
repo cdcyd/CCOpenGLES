@@ -21,13 +21,6 @@ static const SeceneVertex vertices[3] = {
     {{-0.5f,  0.5f, 0.0f}}
 };
 
-// 上面的1、2步可以写成这一个结构体
-//static const GLfloat vertices[] = {
-//    -0.5f, -0.5f, 0.0f,
-//     0.5f, -0.5f, 0.0f,
-//    -0.5f,  0.5f, 0.0f
-//};
-
 @interface TriangleViewController ()<GLKViewDelegate>
 {
     GLuint vertexBufferID;
@@ -54,7 +47,6 @@ static const SeceneVertex vertices[3] = {
     glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 }
-
 
 //绘图函数
 -(void)glkView:(GLKView *)view drawInRect:(CGRect)rect

@@ -1,23 +1,27 @@
 //
-//  TextureGLSLViewController.m
+//  TextureCubeGLSLViewController.m
 //  OpenGLGraphics
 //
-//  Created by wsk on 16/9/8.
+//  Created by wsk on 16/9/9.
 //  Copyright © 2016年 cyd. All rights reserved.
 //
 
-#import "TextureGLSLViewController.h"
-#import <GLKit/GLKit.h>
+#import "TextureCubeGLSLViewController.h"
+#import <OpenGLES/ES2/glext.h>
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
-@interface TextureGLSLViewController ()<GLKViewDelegate>{
+@interface TextureCubeGLSLViewController ()<GLKViewDelegate>{
     GLuint _program;
     GLuint _VBO;
     GLuint _VAO;
     
     GLKMatrix4 _modelViewProjectionMatrix;
     GLKMatrix3 _normalMatrix;
+    GLfloat _rotation;
+    
+    int _uModelViewProjectionMatrix;
+    int _uNormalMatrix;
 }
 // OpenGL ES
 @property(nonatomic, strong)GLKView *pageView;
@@ -25,7 +29,7 @@
 
 @end
 
-@implementation TextureGLSLViewController
+@implementation TextureCubeGLSLViewController
 
 - (void)viewDidLoad
 {
@@ -34,43 +38,101 @@
 }
 
 -(void)setupGL{
-    self.context = [[EAGLContext alloc]initWithAPI:kEAGLRenderingAPIOpenGLES3];
-    self.pageView = [[GLKView alloc]initWithFrame:self.view.bounds context:self.context];
-    self.pageView.delegate = self;
-    [self.view addSubview:self.pageView];
-    
-    [EAGLContext setCurrentContext:self.context];
+    GLKView *view = (GLKView *)self.view;
+    view.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+    [EAGLContext setCurrentContext:view.context];
     
     [self loadShaders];
     
     GLfloat vertexs[] = {
-        -0.5f, 0.5f,     0.0f,1.0f,
-         0.5f, 0.5f,     1.0f,1.0f,
-        -0.5f,-0.5f,     0.0f,0.0f,
-        -0.5f,-0.5f,     0.0f,0.0f,
-         0.5f,-0.5f,     1.0f,0.0f,
-         0.5f, 0.5f,     1.0f,1.0f
+        0.5f, -0.5f, -0.5f,    1.0f, 0.0f, 0.0f,    0.0f, 0.0f,
+        0.5f,  0.5f, -0.5f,    1.0f, 0.0f, 0.0f,    3.0f, 0.0f, 
+        0.5f, -0.5f,  0.5f,    1.0f, 0.0f, 0.0f,    0.0f, 3.0f,
+        0.5f, -0.5f,  0.5f,    1.0f, 0.0f, 0.0f,    0.0f, 3.0f,
+        0.5f,  0.5f,  0.5f,    1.0f, 0.0f, 0.0f,    3.0f, 3.0f,
+        0.5f,  0.5f, -0.5f,    1.0f, 0.0f, 0.0f,    3.0f, 0.0f,
+        
+         0.5f, 0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    3.0f, 0.0f,
+        -0.5f, 0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    0.0f, 0.0f,
+         0.5f, 0.5f,  0.5f,    0.0f, 1.0f, 0.0f,    3.0f, 3.0f,
+         0.5f, 0.5f,  0.5f,    0.0f, 1.0f, 0.0f,    3.0f, 3.0f,
+        -0.5f, 0.5f, -0.5f,    0.0f, 1.0f, 0.0f,    0.0f, 0.0f,
+        -0.5f, 0.5f,  0.5f,    0.0f, 1.0f, 0.0f,    0.0f, 3.0f,
+        
+        -0.5f,  0.5f, -0.5f,   -1.0f, 0.0f, 0.0f,   3.0f, 0.0f,
+        -0.5f, -0.5f, -0.5f,   -1.0f, 0.0f, 0.0f,   0.0f, 0.0f,
+        -0.5f,  0.5f,  0.5f,   -1.0f, 0.0f, 0.0f,   3.0f, 3.0f,
+        -0.5f,  0.5f,  0.5f,   -1.0f, 0.0f, 0.0f,   3.0f, 3.0f,
+        -0.5f, -0.5f, -0.5f,   -1.0f, 0.0f, 0.0f,   0.0f, 0.0f,
+        -0.5f, -0.5f,  0.5f,   -1.0f, 0.0f, 0.0f,   0.0f, 3.0f,
+        
+        -0.5f, -0.5f, -0.5f,   0.0f, -1.0f, 0.0f,   0.0f, 0.0f,
+         0.5f, -0.5f, -0.5f,   0.0f, -1.0f, 0.0f,   3.0f, 0.0f,
+        -0.5f, -0.5f,  0.5f,   0.0f, -1.0f, 0.0f,   0.0f, 3.0f,
+        -0.5f, -0.5f,  0.5f,   0.0f, -1.0f, 0.0f,   0.0f, 3.0f,
+         0.5f, -0.5f, -0.5f,   0.0f, -1.0f, 0.0f,   3.0f, 0.0f,
+         0.5f, -0.5f,  0.5f,   0.0f, -1.0f, 0.0f,   3.0f, 3.0f,
+        
+         0.5f,  0.5f, 0.5f,    0.0f, 0.0f, 1.0f,    3.0f, 3.0f,
+        -0.5f,  0.5f, 0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 3.0f,
+         0.5f, -0.5f, 0.5f,    0.0f, 0.0f, 1.0f,    3.0f, 0.0f,
+         0.5f, -0.5f, 0.5f,    0.0f, 0.0f, 1.0f,    3.0f, 0.0f,
+        -0.5f,  0.5f, 0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 3.0f,
+        -0.5f, -0.5f, 0.5f,    0.0f, 0.0f, 1.0f,    0.0f, 0.0f,
+        
+         0.5f, -0.5f, -0.5f,   0.0f, 0.0f, -1.0f,   3.0f, 0.0f,
+        -0.5f, -0.5f, -0.5f,   0.0f, 0.0f, -1.0f,   0.0f, 0.0f,
+         0.5f,  0.5f, -0.5f,   0.0f, 0.0f, -1.0f,   3.0f, 3.0f,
+         0.5f,  0.5f, -0.5f,   0.0f, 0.0f, -1.0f,   3.0f, 3.0f,
+        -0.5f, -0.5f, -0.5f,   0.0f, 0.0f, -1.0f,   0.0f, 0.0f,
+        -0.5f,  0.5f, -0.5f,   0.0f, 0.0f, -1.0f,   0.0f, 3.0f,
     };
     
     glGenBuffers(1, &_VBO);
     glBindBuffer(GL_ARRAY_BUFFER, _VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertexs), vertexs, GL_STATIC_DRAW);
     
-    [self loadTexture:&_VAO texture:[UIImage imageNamed:@"www"] texType:@"image"];
+    [self loadTexture:&_VAO texture:[UIImage imageNamed:@"picture"] texType:@"image"];
     
     glEnableVertexAttribArray(GLKVertexAttribPosition);
-    glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 4*sizeof(GLfloat), BUFFER_OFFSET(0));
+    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, 8*sizeof(GLfloat), BUFFER_OFFSET(0));
+    
+    glEnableVertexAttribArray(GLKVertexAttribNormal);
+    glVertexAttribPointer(GLKVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, 8*sizeof(GLfloat), BUFFER_OFFSET(3*sizeof(GLfloat)));
+    
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
-    glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, 4*sizeof(GLfloat), BUFFER_OFFSET(2*sizeof(GLfloat)));
+    glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, 8*sizeof(GLfloat), BUFFER_OFFSET(6*sizeof(GLfloat)));
+}
+
+- (void)update
+{
+    float aspect = fabs(self.view.bounds.size.width / self.view.bounds.size.height);
+    GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
+    
+    GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -3.0f);
+    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotation, -1.0f, 1.0f, -1.0f);
+    
+    _normalMatrix = GLKMatrix4GetMatrix3(GLKMatrix4InvertAndTranspose(baseModelViewMatrix, NULL));
+    
+    _modelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, baseModelViewMatrix);
+    
+    _rotation += self.timeSinceLastUpdate * 1.0f;
 }
 
 -(void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
+    
+    glEnable(GL_DEPTH_TEST);
+    
     glClearColor(0xeb/255.f, 0xf5/255.f, 0xff/255.f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     glUseProgram(_program);
     
-    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glUniformMatrix4fv(_uModelViewProjectionMatrix, 1, 0, _modelViewProjectionMatrix.m);
+    glUniformMatrix3fv(_uNormalMatrix, 1, 0, _normalMatrix.m);
+    
+    glDrawArrays(GL_TRIANGLES, 0, 36);
 }
 
 /// texType 1."image":UIImage 2."imageName":图片名 3."file":图片路径
@@ -107,20 +169,11 @@
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, (int)imageWidth, (int)imageHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, imageData);
         free(imageData);
         
-        // 纹理取样模式
-        /*
-         GL_TEXTURE_MIN_FILTER  出现多个纹素对应一个片元时，从相配的多个元素中取样颜色
-         GL_TEXTURE_MAG_FILTER  出现纹素少于片元是的取样方式
-         
-         GL_LINEAR   线性内插法来混合颜色以得到一个新的片元颜色:在GL_TEXTURE_MIN_FILTER时，会将取多个纹素来混合得到片元颜色；在GL_TEXTURE_MAG_FILTER时，会取附近的纹素一起来混合的到片元颜色
-         GL_NEAREST  取其中一个颜色：在GL_TEXTURE_MIN_FILTER时，会取多个纹素其中一个的颜色；在GL_TEXTURE_MAG_FILTER时，会取与片元U、V位置接近的纹素的颜色
-         */
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-        
-        // 纹理循环模式
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
         
         glEnable(GL_TEXTURE_2D);
     }
@@ -133,12 +186,12 @@
     
     _program = glCreateProgram();
     
-    vertShaderPathname = [[NSBundle mainBundle] pathForResource:@"Shader" ofType:@"vsh"];
+    vertShaderPathname = [[NSBundle mainBundle] pathForResource:@"ShaderCube" ofType:@"vsh"];
     if (![self compileShader:&vertShader type:GL_VERTEX_SHADER file:vertShaderPathname]) {
         return NO;
     }
     
-    fragShaderPathname = [[NSBundle mainBundle] pathForResource:@"Shader" ofType:@"fsh"];
+    fragShaderPathname = [[NSBundle mainBundle] pathForResource:@"ShaderCube" ofType:@"fsh"];
     if (![self compileShader:&fragShader type:GL_FRAGMENT_SHADER file:fragShaderPathname]) {
         return NO;
     }
@@ -146,8 +199,9 @@
     glAttachShader(_program, vertShader);
     glAttachShader(_program, fragShader);
     
-    glBindAttribLocation(_program, GLKVertexAttribPosition, "position");
-    glBindAttribLocation(_program, GLKVertexAttribTexCoord0, "texCoord0");
+    glBindAttribLocation(_program, GLKVertexAttribPosition, "aPosition");
+    glBindAttribLocation(_program, GLKVertexAttribTexCoord0, "aTexCoord0");
+    glBindAttribLocation(_program, GLKVertexAttribNormal, "aNormal");
     
     if (![self linkProgram:_program]) {
         if (vertShader) {
@@ -164,6 +218,9 @@
         }
         return NO;
     }
+    
+    _uModelViewProjectionMatrix = glGetUniformLocation(_program, "uModelViewProjectionMatrix");
+    _uNormalMatrix = glGetUniformLocation(_program, "uNormalMatrix");
     
     if (vertShader) {
         glDetachShader(_program, vertShader);

@@ -29,9 +29,9 @@
     [EAGLContext setCurrentContext:_context];
     
     // 创建顶点着色器
-    _vertexShader = [self compileShader:@"VertexShader" withType:GL_VERTEX_SHADER];
+    _vertexShader = [self compileShader:@"Shader" withType:GL_VERTEX_SHADER];
     // 创建片段着色器
-    _fragmentShader = [self compileShader:@"FragmentShader" withType:GL_FRAGMENT_SHADER];
+    _fragmentShader = [self compileShader:@"Shader" withType:GL_FRAGMENT_SHADER];
     // 链接两个着色器
     _shaderPropram = glCreateProgram();
     glAttachShader(_shaderPropram, _vertexShader);
@@ -81,8 +81,15 @@
 }
 
 - (GLuint)compileShader:(NSString*)shaderName withType:(GLenum)shaderType {
+    NSString *type;
+    if (shaderType == GL_FRAGMENT_SHADER) {
+        type = @"fglsl";
+    }
+    else{
+        type = @"vglsl";
+    }
     NSError* error = nil;    
-    NSString* shaderPath = [[NSBundle mainBundle] pathForResource:shaderName ofType:@"glsl"];
+    NSString* shaderPath = [[NSBundle mainBundle] pathForResource:shaderName ofType:type];
     NSString* shaderString = [NSString stringWithContentsOfFile:shaderPath encoding:NSUTF8StringEncoding error:&error];
     if (!shaderString) {
         NSLog(@"读取着色器失败:%@",error.localizedDescription);
