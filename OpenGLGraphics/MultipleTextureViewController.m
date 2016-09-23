@@ -11,21 +11,11 @@
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
-@interface MultipleTextureViewController ()<GLKViewDelegate>{
-    GLuint _program;
-    GLuint _VBO;
-    GLuint _VAO;
-    
-    GLKMatrix4 _modelViewProjectionMatrix;
-    GLKMatrix3 _normalMatrix;
+@interface MultipleTextureViewController ()<GLKViewDelegate>
+{
+    GLuint  _VBO;
     GLfloat _rotation;
-    
-    int _uModelViewProjectionMatrix;
-    int _uNormalMatrix;
 }
-// OpenGL ES
-@property(nonatomic, strong)GLKView *pageView;
-@property(nonatomic, strong)EAGLContext *context;
 
 @property(nonatomic, strong)GLKBaseEffect *effect;
 
@@ -93,7 +83,7 @@
     self.effect.light0.enabled = GL_TRUE;
     self.effect.light0.diffuseColor = GLKVector4Make(0.8f, 0.8f, 0.8f, 1.0f);
     
-    CGImageRef imageRef0 = [[UIImage imageNamed:@"picture"] CGImage];
+    CGImageRef imageRef0 = [[UIImage imageNamed:@"picture256x256"] CGImage];
     GLKTextureInfo *textureInfo0 = [GLKTextureLoader textureWithCGImage:imageRef0 options:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], GLKTextureLoaderOriginBottomLeft, nil] error:NULL];
     self.effect.texture2d0.name = textureInfo0.name;
     self.effect.texture2d0.target = textureInfo0.target;
@@ -101,7 +91,7 @@
     glTexParameteri(textureInfo0.target, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(textureInfo0.target, GL_TEXTURE_WRAP_T, GL_REPEAT);
     
-    CGImageRef imageRef1 = [[UIImage imageNamed:@"picture2"] CGImage];
+    CGImageRef imageRef1 = [[UIImage imageNamed:@"mutpicture256x256"] CGImage];
     GLKTextureInfo *textureInfo1 = [GLKTextureLoader textureWithCGImage:imageRef1 options:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], GLKTextureLoaderOriginBottomLeft, nil] error:NULL];
     self.effect.texture2d1.name = textureInfo1.name;
     self.effect.texture2d1.target = textureInfo1.target;
@@ -133,13 +123,11 @@
 {
     float aspect = fabs(self.view.bounds.size.width / self.view.bounds.size.height);
     GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
-    
     self.effect.transform.projectionMatrix = projectionMatrix;
     
-    GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -3.0f);
-    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotation, -1.0f, 1.0f, -1.0f);
-    
-    self.effect.transform.modelviewMatrix = baseModelViewMatrix;
+    GLKMatrix4 modelviewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -3.0f);
+    modelviewMatrix = GLKMatrix4Rotate(modelviewMatrix, _rotation, -1.0f, 1.0f, -1.0f);
+    self.effect.transform.modelviewMatrix = modelviewMatrix;
     
     _rotation += self.timeSinceLastUpdate * 1.0f;
 }
@@ -150,7 +138,6 @@
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     [self.effect prepareToDraw];
-    
     glDrawArrays(GL_TRIANGLES, 0, 36);
 }
 

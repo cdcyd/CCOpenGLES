@@ -12,20 +12,8 @@
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
 @interface CubeViewController ()<GLKViewDelegate>{
-    GLuint _program;
     GLuint _VBO;
-    GLuint _VAO;
-    
-    GLKMatrix4 _modelViewProjectionMatrix;
-    GLKMatrix3 _normalMatrix;
-    GLfloat _rotation;
-    
-    int _uModelViewProjectionMatrix;
-    int _uNormalMatrix;
 }
-// OpenGL ES
-@property(nonatomic, strong)GLKView *pageView;
-@property(nonatomic, strong)EAGLContext *context;
 
 @property(nonatomic, strong)GLKBaseEffect *effect;
 
@@ -93,13 +81,19 @@
     self.effect.light0.enabled = GL_TRUE;
     self.effect.light0.diffuseColor = GLKVector4Make(0.8f, 0.8f, 0.8f, 1.0f);
     
+    // 是透视投影变换
     float aspect = fabs(self.view.bounds.size.width / self.view.bounds.size.height);
-    GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(45.0f), aspect, 0.1f, 100.0f);
+    // 第一个参数是视角，第二个参数是视图宽高比
+    GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
     self.effect.transform.projectionMatrix = projectionMatrix;
     
-    GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -5.0f);
-    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, 0.6, 1.0f, 1.0f, 0.0f);
-    self.effect.transform.modelviewMatrix = baseModelViewMatrix;
+    // 平移变换
+    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -5.0f);
+    // x轴15°
+    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, GLKMathDegreesToRadians(15.0f), 1.0f, 0.0f, 0.0f);
+    // y轴-30°
+    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, GLKMathDegreesToRadians(-30.0f), 0.0f, 1.0f, 0.0f);
+    self.effect.transform.modelviewMatrix = modelViewMatrix;
     
     glEnable(GL_DEPTH_TEST);
     

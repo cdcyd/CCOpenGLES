@@ -17,21 +17,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dataSource = @[@[@"TriangleGLSLViewController.三角形  GLSL",
-                          @"TriangleAnimationGLSLViewController.三角形  Animation  GLSL",
-                          @"QuadrilateralGLSLViewController.四边形  GLSL",
-                          @"CubeGLSLViewController.立方体  GLSL",
-                          @"TextureGLSLViewController.纹    理  GLSL",
-                          @"TextureCubeGLSLViewController.纹理练习  GLSL",
-                          @"MultipleTextureGLSLViewController.多重纹理  GLSL"],
-                        @[@"TriangleViewController.三角形  GLKit",
+    self.title = @"Learn OpenGL ES";
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                            action:nil];
+    [[UITableViewHeaderFooterView appearance] setTintColor:[UIColor colorWithRed:0xeb/255.f green:0xf5/255.f blue:0xff/255.f alpha:1]];
+    
+    self.dataSource = @[@[@"TriangleViewController.三角形  GLKit",
                           @"TriangleAnimationViewController.三角形  Animation  GLKit",
                           @"QuadrilateralViewController.四边形  GLKit",
                           @"CubeViewController.立方体  GLKit",
+                          @"LogoViewController.LOGO  GLKit",
                           @"TextureViewController.纹    理  GLKit",
                           @"TextureCubeViewController.纹理练习  GLKit",
-                          @"MultipleTextureViewController.多重纹理  GLKit"]];
-    [[UITableViewHeaderFooterView appearance] setTintColor:[UIColor colorWithRed:0xeb/255.f green:0xf5/255.f blue:0xff/255.f alpha:1]];
+                          @"MultipleTextureViewController.多重纹理  GLKit",
+                          @"LightViewController.光    照  GLKit"],
+                        @[@"TriangleGLSLViewController.三角形  GLSL",
+                          @"TriangleAnimationGLSLViewController.三角形  Animation  GLSL",
+                          @"QuadrilateralGLSLViewController.四边形  GLSL",
+                          @"CubeGLSLViewController.立方体  GLSL",
+                          @"LogoGLSLViewController.LOGO  GLSL",
+                          @"TextureGLSLViewController.纹    理  GLSL",
+                          @"TextureCubeGLSLViewController.纹理练习  GLSL",
+                          @"MultipleTextureGLSLViewController.多重纹理  GLSL",
+                          @"LightGLSLViewController.光    照  GLSL"]];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -41,10 +51,10 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if (section == 0) {
+    if (section == 1) {
         return @"GLSL";
     }
-    if (section == 1) {
+    if (section == 0) {
         return @"GLKit";
     }
     return @"";

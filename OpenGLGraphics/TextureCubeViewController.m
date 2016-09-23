@@ -11,23 +11,14 @@
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
-@interface TextureCubeViewController ()<GLKViewDelegate>{
-    GLuint _program;
+@interface TextureCubeViewController ()<GLKViewDelegate>
+{
     GLuint _VBO;
-    GLuint _VAO;
-    
-    GLKMatrix4 _modelViewProjectionMatrix;
-    GLKMatrix3 _normalMatrix;
     GLfloat _rotation;
-    
-    int _uModelViewProjectionMatrix;
-    int _uNormalMatrix;
 }
-// OpenGL ES
-@property(nonatomic, strong)GLKView *pageView;
-@property(nonatomic, strong)EAGLContext *context;
 
 @property(nonatomic, strong)GLKBaseEffect *effect;
+
 @end
 
 @implementation TextureCubeViewController
@@ -92,7 +83,7 @@
     self.effect.light0.enabled = GL_TRUE;
     self.effect.light0.diffuseColor = GLKVector4Make(0.8f, 0.8f, 0.8f, 1.0f);
     
-    CGImageRef imageRef0 = [[UIImage imageNamed:@"picture"] CGImage];
+    CGImageRef imageRef0 = [[UIImage imageNamed:@"picture256x256"] CGImage];
     GLKTextureInfo *textureInfo0 = [GLKTextureLoader textureWithCGImage:imageRef0 options:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], GLKTextureLoaderOriginBottomLeft, nil] error:NULL];
     self.effect.texture2d0.name = textureInfo0.name;
     self.effect.texture2d0.target = textureInfo0.target;
@@ -118,15 +109,17 @@
 
 - (void)update
 {
+    // 投影变换
     float aspect = fabs(self.view.bounds.size.width / self.view.bounds.size.height);
     GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
-    
     self.effect.transform.projectionMatrix = projectionMatrix;
     
-    GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -3.0f);
-    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotation, -1.0f, 1.0f, -1.0f);
+    // 旋转变换
+    GLKMatrix4 modelviewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -3.0f);
+    modelviewMatrix = GLKMatrix4Rotate(modelviewMatrix, _rotation, 1.0f, 0.0f, 0.0f);
+    modelviewMatrix = GLKMatrix4Rotate(modelviewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
     
-    self.effect.transform.modelviewMatrix = baseModelViewMatrix;
+    self.effect.transform.modelviewMatrix = modelviewMatrix;
     
     _rotation += self.timeSinceLastUpdate * 1.0f;
 }

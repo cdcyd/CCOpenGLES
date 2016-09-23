@@ -23,9 +23,6 @@
     int _uModelViewProjectionMatrix;
     int _uNormalMatrix;
 }
-// OpenGL ES
-@property(nonatomic, strong)GLKView *pageView;
-@property(nonatomic, strong)EAGLContext *context;
 
 @end
 
@@ -93,7 +90,7 @@
     glBindBuffer(GL_ARRAY_BUFFER, _VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertexs), vertexs, GL_STATIC_DRAW);
     
-    [self loadTexture:&_VAO texture:[UIImage imageNamed:@"picture"] texType:@"image"];
+    [self loadTexture:&_VAO texture:[UIImage imageNamed:@"picture256x256"] texType:@"image"];
     
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, 8*sizeof(GLfloat), BUFFER_OFFSET(0));
@@ -110,12 +107,12 @@
     float aspect = fabs(self.view.bounds.size.width / self.view.bounds.size.height);
     GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
     
-    GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -3.0f);
-    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotation, -1.0f, 1.0f, -1.0f);
+    GLKMatrix4 modelviewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -3.0f);
+    modelviewMatrix = GLKMatrix4Rotate(modelviewMatrix, _rotation, 1.0f, 0.0f, 0.0f);
+    modelviewMatrix = GLKMatrix4Rotate(modelviewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
     
-    _normalMatrix = GLKMatrix4GetMatrix3(GLKMatrix4InvertAndTranspose(baseModelViewMatrix, NULL));
-    
-    _modelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, baseModelViewMatrix);
+    _normalMatrix = GLKMatrix4GetMatrix3(GLKMatrix4InvertAndTranspose(modelviewMatrix, NULL));
+    _modelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, modelviewMatrix);
     
     _rotation += self.timeSinceLastUpdate * 1.0f;
 }

@@ -49,7 +49,7 @@ static SceneVertex vertexs[] = {
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertexs), vertexs, GL_STATIC_DRAW);
     
-    CGImageRef imageRef = [[UIImage imageNamed:@"www.png"] CGImage];
+    CGImageRef imageRef = [[UIImage imageNamed:@"texture300x600"] CGImage];
     GLKTextureInfo *textureInfo = [GLKTextureLoader 
                                    textureWithCGImage:imageRef 
                                    options:nil 

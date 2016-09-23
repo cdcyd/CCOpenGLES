@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7C0486D71D5B04FB00770959 /* TextureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0486D61D5B04FB00770959 /* TextureViewController.m */; };
+		7C11AD221D94F6630066E246 /* LightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C11AD211D94F6630066E246 /* LightViewController.m */; };
+		7C11AD241D94F7540066E246 /* Earth512x256.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C11AD231D94F7540066E246 /* Earth512x256.jpg */; };
+		7C11AD2A1D9500CF0066E246 /* LogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C11AD291D9500CF0066E246 /* LogoViewController.m */; };
 		7C42E7A01D52E5B0003764F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C42E79F1D52E5B0003764F8 /* main.m */; };
 		7C42E7A31D52E5B0003764F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C42E7A21D52E5B0003764F8 /* AppDelegate.m */; };
 		7C42E7A61D52E5B0003764F8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C42E7A51D52E5B0003764F8 /* ViewController.m */; };
@@ -23,14 +26,14 @@
 		7CA2A4EF1D542E04004549F2 /* Shader.vglsl in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2A4EE1D542E04004549F2 /* Shader.vglsl */; };
 		7CA2A4F11D542E1E004549F2 /* Shader.fglsl in Resources */ = {isa = PBXBuildFile; fileRef = 7CA2A4F01D542E1E004549F2 /* Shader.fglsl */; };
 		7CA2A4F51D542E76004549F2 /* TriangleGLSLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2A4F41D542E76004549F2 /* TriangleGLSLViewController.m */; };
-		7CB8B4791D5D667800776C76 /* www.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8B4781D5D667800776C76 /* www.png */; };
+		7CB8B4791D5D667800776C76 /* texture300x600.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB8B4781D5D667800776C76 /* texture300x600.png */; };
 		7CD173961D824AB4005F4394 /* TextureCubeGLSLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD173951D824AB4005F4394 /* TextureCubeGLSLViewController.m */; };
-		7CD173981D824AD2005F4394 /* picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD173971D824AD2005F4394 /* picture.png */; };
+		7CD173981D824AD2005F4394 /* picture256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD173971D824AD2005F4394 /* picture256x256.png */; };
 		7CD1739B1D824B14005F4394 /* ShaderCube.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7CD173991D824B14005F4394 /* ShaderCube.fsh */; };
 		7CD1739C1D824B14005F4394 /* ShaderCube.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 7CD1739A1D824B14005F4394 /* ShaderCube.vsh */; };
 		7CD1739F1D825772005F4394 /* TextureCubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD1739E1D825772005F4394 /* TextureCubeViewController.m */; };
 		7CD173E61D825FA7005F4394 /* MultipleTextureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD173E51D825FA7005F4394 /* MultipleTextureViewController.m */; };
-		7CD173E91D826129005F4394 /* picture2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD173E81D826129005F4394 /* picture2.png */; };
+		7CD173E91D826129005F4394 /* mutpicture256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD173E81D826129005F4394 /* mutpicture256x256.png */; };
 		7CD173ED1D82670F005F4394 /* CubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD173EC1D82670F005F4394 /* CubeViewController.m */; };
 		7CE3584A1D8131D80014C215 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 7CE358481D8131D80014C215 /* Shader.fsh */; };
 		7CE3584B1D8131D80014C215 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 7CE358491D8131D80014C215 /* Shader.vsh */; };
@@ -57,6 +60,12 @@
 /* Begin PBXFileReference section */
 		7C0486D51D5B04FB00770959 /* TextureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureViewController.h; sourceTree = "<group>"; };
 		7C0486D61D5B04FB00770959 /* TextureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureViewController.m; sourceTree = "<group>"; };
+		7C11AD1F1D94F6330066E246 /* sphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sphere.h; sourceTree = "<group>"; };
+		7C11AD201D94F6630066E246 /* LightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightViewController.h; sourceTree = "<group>"; };
+		7C11AD211D94F6630066E246 /* LightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightViewController.m; sourceTree = "<group>"; };
+		7C11AD231D94F7540066E246 /* Earth512x256.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Earth512x256.jpg; sourceTree = "<group>"; };
+		7C11AD281D9500CF0066E246 /* LogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoViewController.h; sourceTree = "<group>"; };
+		7C11AD291D9500CF0066E246 /* LogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoViewController.m; sourceTree = "<group>"; };
 		7C42E79B1D52E5B0003764F8 /* OpenGLGraphics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLGraphics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C42E79F1D52E5B0003764F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7C42E7A11D52E5B0003764F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,17 +93,17 @@
 		7CA2A4F01D542E1E004549F2 /* Shader.fglsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Shader.fglsl; sourceTree = "<group>"; };
 		7CA2A4F31D542E76004549F2 /* TriangleGLSLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleGLSLViewController.h; sourceTree = "<group>"; };
 		7CA2A4F41D542E76004549F2 /* TriangleGLSLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleGLSLViewController.m; sourceTree = "<group>"; };
-		7CB8B4781D5D667800776C76 /* www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = www.png; sourceTree = "<group>"; };
+		7CB8B4781D5D667800776C76 /* texture300x600.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture300x600.png; sourceTree = "<group>"; };
 		7CD173941D824AB4005F4394 /* TextureCubeGLSLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureCubeGLSLViewController.h; sourceTree = "<group>"; };
 		7CD173951D824AB4005F4394 /* TextureCubeGLSLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureCubeGLSLViewController.m; sourceTree = "<group>"; };
-		7CD173971D824AD2005F4394 /* picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture.png; sourceTree = "<group>"; };
+		7CD173971D824AD2005F4394 /* picture256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture256x256.png; sourceTree = "<group>"; };
 		7CD173991D824B14005F4394 /* ShaderCube.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ShaderCube.fsh; sourceTree = "<group>"; };
 		7CD1739A1D824B14005F4394 /* ShaderCube.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ShaderCube.vsh; sourceTree = "<group>"; };
 		7CD1739D1D825772005F4394 /* TextureCubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureCubeViewController.h; sourceTree = "<group>"; };
 		7CD1739E1D825772005F4394 /* TextureCubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextureCubeViewController.m; sourceTree = "<group>"; };
 		7CD173E41D825FA7005F4394 /* MultipleTextureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleTextureViewController.h; sourceTree = "<group>"; };
 		7CD173E51D825FA7005F4394 /* MultipleTextureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleTextureViewController.m; sourceTree = "<group>"; };
-		7CD173E81D826129005F4394 /* picture2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture2.png; sourceTree = "<group>"; };
+		7CD173E81D826129005F4394 /* mutpicture256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mutpicture256x256.png; sourceTree = "<group>"; };
 		7CD173EB1D82670F005F4394 /* CubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeViewController.h; sourceTree = "<group>"; };
 		7CD173EC1D82670F005F4394 /* CubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeViewController.m; sourceTree = "<group>"; };
 		7CE358481D8131D80014C215 /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
@@ -137,6 +146,41 @@
 			name = Texture;
 			sourceTree = "<group>";
 		};
+		7C11AD1E1D94F57C0066E246 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7C11AD1F1D94F6330066E246 /* sphere.h */,
+				7CD173971D824AD2005F4394 /* picture256x256.png */,
+				7CD173E81D826129005F4394 /* mutpicture256x256.png */,
+				7CB8B4781D5D667800776C76 /* texture300x600.png */,
+				7C11AD231D94F7540066E246 /* Earth512x256.jpg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7C11AD251D95006B0066E246 /* Cube */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cube;
+			sourceTree = "<group>";
+		};
+		7C11AD261D9500A00066E246 /* CubeLogo */ = {
+			isa = PBXGroup;
+			children = (
+				7C11AD281D9500CF0066E246 /* LogoViewController.h */,
+				7C11AD291D9500CF0066E246 /* LogoViewController.m */,
+			);
+			name = CubeLogo;
+			sourceTree = "<group>";
+		};
+		7C11AD271D9500B10066E246 /* CubeLogo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CubeLogo;
+			sourceTree = "<group>";
+		};
 		7C42E7921D52E5B0003764F8 = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +204,10 @@
 		7C42E79D1D52E5B0003764F8 /* OpenGLGraphics */ = {
 			isa = PBXGroup;
 			children = (
-				7C42E7D41D52ECE0003764F8 /* Graphics */,
+				7C11AD1E1D94F57C0066E246 /* Resources */,
+				7CA2A4ED1D542DC0004549F2 /* GLSL */,
+				7C62AD481D5C16EB00ECDF17 /* ViewControllerGLKit */,
+				7C62AD491D5C16F000ECDF17 /* ViewControllerGLSL */,
 				7C42E7A11D52E5B0003764F8 /* AppDelegate.h */,
 				7C42E7A21D52E5B0003764F8 /* AppDelegate.m */,
 				7C42E7A41D52E5B0003764F8 /* ViewController.h */,
@@ -178,9 +225,6 @@
 		7C42E79E1D52E5B0003764F8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7CD173971D824AD2005F4394 /* picture.png */,
-				7CD173E81D826129005F4394 /* picture2.png */,
-				7CB8B4781D5D667800776C76 /* www.png */,
 				7C42E79F1D52E5B0003764F8 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -204,16 +248,6 @@
 			path = OpenGLGraphicsUITests;
 			sourceTree = "<group>";
 		};
-		7C42E7D41D52ECE0003764F8 /* Graphics */ = {
-			isa = PBXGroup;
-			children = (
-				7CA2A4ED1D542DC0004549F2 /* GLSL */,
-				7C62AD491D5C16F000ECDF17 /* ViewControllerGLSL */,
-				7C62AD481D5C16EB00ECDF17 /* ViewControllerGLKit */,
-			);
-			name = Graphics;
-			sourceTree = "<group>";
-		};
 		7C42E7D51D52ECF7003764F8 /* Triangle */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,9 +269,11 @@
 		7C62AD481D5C16EB00ECDF17 /* ViewControllerGLKit */ = {
 			isa = PBXGroup;
 			children = (
+				7C912C571D93B14D0047185D /* Light */,
 				7CD173E31D825F72005F4394 /* MultipleTexture */,
 				7CD173931D824A90005F4394 /* TextureCube */,
 				7C0486D41D5B04DB00770959 /* Texture */,
+				7C11AD261D9500A00066E246 /* CubeLogo */,
 				7CD173EA1D8266F6005F4394 /* Cube */,
 				7C42E7D91D531B7E003764F8 /* Quadrilateral */,
 				7C8A7BF01D5DCA9F00486DE8 /* TriangleAnimation */,
@@ -249,9 +285,12 @@
 		7C62AD491D5C16F000ECDF17 /* ViewControllerGLSL */ = {
 			isa = PBXGroup;
 			children = (
+				7C912C581D93B1550047185D /* Light */,
 				7CD173E71D825FAD005F4394 /* MultipleTextureGLSL */,
 				7CD173921D824A46005F4394 /* TextureCubeGLSL */,
 				7C62AD4B1D5C176200ECDF17 /* TextureGLSL */,
+				7C11AD271D9500B10066E246 /* CubeLogo */,
+				7C11AD251D95006B0066E246 /* Cube */,
 				7C62AD4A1D5C174800ECDF17 /* QuadrilateralGLSL */,
 				7CA002E81D61574100A59E4C /* TriangleAnimationGLSL */,
 				7CA2A4F21D542E48004549F2 /* TriangleGLSL */,
@@ -282,6 +321,22 @@
 				7C8A7BF21D5DCAC100486DE8 /* TriangleAnimationViewController.m */,
 			);
 			name = TriangleAnimation;
+			sourceTree = "<group>";
+		};
+		7C912C571D93B14D0047185D /* Light */ = {
+			isa = PBXGroup;
+			children = (
+				7C11AD201D94F6630066E246 /* LightViewController.h */,
+				7C11AD211D94F6630066E246 /* LightViewController.m */,
+			);
+			name = Light;
+			sourceTree = "<group>";
+		};
+		7C912C581D93B1550047185D /* Light */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Light;
 			sourceTree = "<group>";
 		};
 		7CA002E81D61574100A59E4C /* TriangleAnimationGLSL */ = {
@@ -423,6 +478,7 @@
 				TargetAttributes = {
 					7C42E79A1D52E5B0003764F8 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9C283KM7PP;
 					};
 					7C42E7B61D52E5B0003764F8 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -460,17 +516,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CE3584B1D8131D80014C215 /* Shader.vsh in Resources */,
-				7CD173E91D826129005F4394 /* picture2.png in Resources */,
+				7CD173E91D826129005F4394 /* mutpicture256x256.png in Resources */,
 				7C42E7B11D52E5B0003764F8 /* LaunchScreen.storyboard in Resources */,
 				7CD1739C1D824B14005F4394 /* ShaderCube.vsh in Resources */,
-				7CB8B4791D5D667800776C76 /* www.png in Resources */,
+				7CB8B4791D5D667800776C76 /* texture300x600.png in Resources */,
 				7C42E7AE1D52E5B0003764F8 /* Assets.xcassets in Resources */,
 				7CA2A4EF1D542E04004549F2 /* Shader.vglsl in Resources */,
 				7CD1739B1D824B14005F4394 /* ShaderCube.fsh in Resources */,
 				7C42E7A91D52E5B0003764F8 /* Main.storyboard in Resources */,
 				7CE3584A1D8131D80014C215 /* Shader.fsh in Resources */,
+				7C11AD241D94F7540066E246 /* Earth512x256.jpg in Resources */,
 				7CA2A4F11D542E1E004549F2 /* Shader.fglsl in Resources */,
-				7CD173981D824AD2005F4394 /* picture.png in Resources */,
+				7CD173981D824AD2005F4394 /* picture256x256.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,9 +563,11 @@
 				7CE3584E1D8132040014C215 /* TextureGLSLViewController.m in Sources */,
 				7CD173ED1D82670F005F4394 /* CubeViewController.m in Sources */,
 				7C42E7D81D52ED12003764F8 /* TriangleViewController.m in Sources */,
+				7C11AD221D94F6630066E246 /* LightViewController.m in Sources */,
 				7CD1739F1D825772005F4394 /* TextureCubeViewController.m in Sources */,
 				7C42E7A01D52E5B0003764F8 /* main.m in Sources */,
 				7C8A7BF31D5DCAC100486DE8 /* TriangleAnimationViewController.m in Sources */,
+				7C11AD2A1D9500CF0066E246 /* LogoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +708,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9C283KM7PP;
 				INFOPLIST_FILE = OpenGLGraphics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vdin.cyd.OpenGLGraphics;
@@ -660,6 +720,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9C283KM7PP;
 				INFOPLIST_FILE = OpenGLGraphics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vdin.cyd.OpenGLGraphics;

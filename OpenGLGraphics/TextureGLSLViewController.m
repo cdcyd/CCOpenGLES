@@ -19,8 +19,8 @@
     GLKMatrix4 _modelViewProjectionMatrix;
     GLKMatrix3 _normalMatrix;
 }
-// OpenGL ES
-@property(nonatomic, strong)GLKView *pageView;
+
+@property(nonatomic, strong)GLKView *glView;
 @property(nonatomic, strong)EAGLContext *context;
 
 @end
@@ -35,9 +35,9 @@
 
 -(void)setupGL{
     self.context = [[EAGLContext alloc]initWithAPI:kEAGLRenderingAPIOpenGLES3];
-    self.pageView = [[GLKView alloc]initWithFrame:self.view.bounds context:self.context];
-    self.pageView.delegate = self;
-    [self.view addSubview:self.pageView];
+    self.glView = [[GLKView alloc]initWithFrame:self.view.bounds context:self.context];
+    self.glView.delegate = self;
+    [self.view addSubview:self.glView];
     
     [EAGLContext setCurrentContext:self.context];
     
@@ -56,7 +56,7 @@
     glBindBuffer(GL_ARRAY_BUFFER, _VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertexs), vertexs, GL_STATIC_DRAW);
     
-    [self loadTexture:&_VAO texture:[UIImage imageNamed:@"www"] texType:@"image"];
+    [self loadTexture:&_VAO texture:[UIImage imageNamed:@"texture300x600"] texType:@"image"];
     
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 4*sizeof(GLfloat), BUFFER_OFFSET(0));
