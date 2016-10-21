@@ -48,6 +48,17 @@
 		7CD7B32E1DA8E62300704D4D /* MultipleTextureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD7B32D1DA8E62300704D4D /* MultipleTextureViewController.m */; };
 		7CD7B3311DA8E62E00704D4D /* LightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD7B3301DA8E62E00704D4D /* LightViewController.m */; };
 		7CD7B3351DA8EDDA00704D4D /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CD7B3341DA8EDDA00704D4D /* AnimationViewController.m */; };
+		7CD8EF901DB9EBFB0019FFF0 /* blood_bk.tga in Resources */ = {isa = PBXBuildFile; fileRef = 7CD8EF871DB9EBFB0019FFF0 /* blood_bk.tga */; };
+		7CD8EF911DB9EBFB0019FFF0 /* blood_dn.tga in Resources */ = {isa = PBXBuildFile; fileRef = 7CD8EF881DB9EBFB0019FFF0 /* blood_dn.tga */; };
+		7CD8EF921DB9EBFB0019FFF0 /* blood_ft.tga in Resources */ = {isa = PBXBuildFile; fileRef = 7CD8EF891DB9EBFB0019FFF0 /* blood_ft.tga */; };
+		7CD8EF931DB9EBFB0019FFF0 /* blood_lf.tga in Resources */ = {isa = PBXBuildFile; fileRef = 7CD8EF8A1DB9EBFB0019FFF0 /* blood_lf.tga */; };
+		7CD8EF941DB9EBFB0019FFF0 /* blood_rt.tga in Resources */ = {isa = PBXBuildFile; fileRef = 7CD8EF8B1DB9EBFB0019FFF0 /* blood_rt.tga */; };
+		7CD8EF951DB9EBFB0019FFF0 /* blood_up.tga in Resources */ = {isa = PBXBuildFile; fileRef = 7CD8EF8C1DB9EBFB0019FFF0 /* blood_up.tga */; };
+		7CD8EF961DB9EBFB0019FFF0 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7CD8EF8D1DB9EBFB0019FFF0 /* license.txt */; };
+		7CD8EF971DB9EBFB0019FFF0 /* mp_blood.shader in Resources */ = {isa = PBXBuildFile; fileRef = 7CD8EF8E1DB9EBFB0019FFF0 /* mp_blood.shader */; };
+		7CD8EF981DB9EBFB0019FFF0 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7CD8EF8F1DB9EBFB0019FFF0 /* readme.txt */; };
+		7CF4766D1DB5FAAC00844A7C /* SkyboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF4766C1DB5FAAC00844A7C /* SkyboxViewController.m */; };
+		7CF476711DB5FB4D00844A7C /* LightMaterialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF476701DB5FB4D00844A7C /* LightMaterialViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C279ADC1DB85D9B00C8D238 /* sphereLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sphereLight.h; sourceTree = "<group>"; };
 		7C356BED1DA9E27E00999DAE /* texture256x256.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture256x256.jpg; sourceTree = "<group>"; };
 		7C356BF21DA9E8AC00999DAE /* TexturePracticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TexturePracticeViewController.h; sourceTree = "<group>"; };
 		7C356BF31DA9E8AC00999DAE /* TexturePracticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TexturePracticeViewController.m; sourceTree = "<group>"; };
@@ -136,6 +148,19 @@
 		7CD7B3301DA8E62E00704D4D /* LightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightViewController.m; sourceTree = "<group>"; };
 		7CD7B3331DA8EDDA00704D4D /* AnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationViewController.h; sourceTree = "<group>"; };
 		7CD7B3341DA8EDDA00704D4D /* AnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationViewController.m; sourceTree = "<group>"; };
+		7CD8EF871DB9EBFB0019FFF0 /* blood_bk.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = blood_bk.tga; sourceTree = "<group>"; };
+		7CD8EF881DB9EBFB0019FFF0 /* blood_dn.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = blood_dn.tga; sourceTree = "<group>"; };
+		7CD8EF891DB9EBFB0019FFF0 /* blood_ft.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = blood_ft.tga; sourceTree = "<group>"; };
+		7CD8EF8A1DB9EBFB0019FFF0 /* blood_lf.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = blood_lf.tga; sourceTree = "<group>"; };
+		7CD8EF8B1DB9EBFB0019FFF0 /* blood_rt.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = blood_rt.tga; sourceTree = "<group>"; };
+		7CD8EF8C1DB9EBFB0019FFF0 /* blood_up.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = blood_up.tga; sourceTree = "<group>"; };
+		7CD8EF8D1DB9EBFB0019FFF0 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		7CD8EF8E1DB9EBFB0019FFF0 /* mp_blood.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mp_blood.shader; sourceTree = "<group>"; };
+		7CD8EF8F1DB9EBFB0019FFF0 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		7CF4766B1DB5FAAC00844A7C /* SkyboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyboxViewController.h; sourceTree = "<group>"; };
+		7CF4766C1DB5FAAC00844A7C /* SkyboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyboxViewController.m; sourceTree = "<group>"; };
+		7CF4766F1DB5FB4D00844A7C /* LightMaterialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightMaterialViewController.h; sourceTree = "<group>"; };
+		7CF476701DB5FB4D00844A7C /* LightMaterialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightMaterialViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,13 +188,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7C356BF11DA9E86300999DAE /* TextureReview */ = {
+		7C356BF11DA9E86300999DAE /* TexturePractice */ = {
 			isa = PBXGroup;
 			children = (
 				7C356BF21DA9E8AC00999DAE /* TexturePracticeViewController.h */,
 				7C356BF31DA9E8AC00999DAE /* TexturePracticeViewController.m */,
 			);
-			name = TextureReview;
+			name = TexturePractice;
 			sourceTree = "<group>";
 		};
 		7C356BF51DA9E9D700999DAE /* LOGO */ = {
@@ -197,6 +222,15 @@
 				7C356C161DAA3C9700999DAE /* LOGOGLSLViewController.m */,
 			);
 			name = LOGO;
+			sourceTree = "<group>";
+		};
+		7C942D0A1DB470E3004124E6 /* Skybox */ = {
+			isa = PBXGroup;
+			children = (
+				7CF4766B1DB5FAAC00844A7C /* SkyboxViewController.h */,
+				7CF4766C1DB5FAAC00844A7C /* SkyboxViewController.m */,
+			);
+			name = Skybox;
 			sourceTree = "<group>";
 		};
 		7CD7B2B01DA8E29200704D4D = {
@@ -282,6 +316,7 @@
 		7CD7B2F91DA8E33100704D4D /* VertexData */ = {
 			isa = PBXGroup;
 			children = (
+				7C279ADC1DB85D9B00C8D238 /* sphereLight.h */,
 				7CD7B2FA1DA8E37900704D4D /* sphere.h */,
 			);
 			name = VertexData;
@@ -290,10 +325,8 @@
 		7CD7B2FB1DA8E3E900704D4D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7C356BED1DA9E27E00999DAE /* texture256x256.jpg */,
-				7CD7B2FC1DA8E3FC00704D4D /* picture256x256.png */,
-				7CD7B2FD1DA8E3FC00704D4D /* mutpicture256x256.png */,
-				7CD7B2FF1DA8E3FC00704D4D /* Earth512x256.jpg */,
+				7CD8EF991DB9EC010019FFF0 /* picture */,
+				7CD8EF861DB9EBFB0019FFF0 /* mapblood */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -318,9 +351,11 @@
 		7CD7B3111DA8E43B00704D4D /* VCGLKit */ = {
 			isa = PBXGroup;
 			children = (
+				7C942D0A1DB470E3004124E6 /* Skybox */,
+				7CF4766E1DB5FAD600844A7C /* LightMaterial */,
 				7CD7B3181DA8E4D600704D4D /* Light */,
 				7CD7B31D1DA8E52300704D4D /* MultipleTexture */,
-				7C356BF11DA9E86300999DAE /* TextureReview */,
+				7C356BF11DA9E86300999DAE /* TexturePractice */,
 				7CD7B3161DA8E4AC00704D4D /* Texture */,
 				7C356BF51DA9E9D700999DAE /* LOGO */,
 				7CD7B3151DA8E49A00704D4D /* Cube */,
@@ -334,7 +369,6 @@
 		7CD7B3121DA8E44F00704D4D /* VCGLSL */ = {
 			isa = PBXGroup;
 			children = (
-				7CD7B31F1DA8E59800704D4D /* Light */,
 				7CD7B31E1DA8E58F00704D4D /* MultipleTexture */,
 				7CD7B31C1DA8E51400704D4D /* Texture */,
 				7C356C141DAA3C8000999DAE /* LOGO */,
@@ -445,13 +479,6 @@
 			name = MultipleTexture;
 			sourceTree = "<group>";
 		};
-		7CD7B31F1DA8E59800704D4D /* Light */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Light;
-			sourceTree = "<group>";
-		};
 		7CD7B3321DA8EDB400704D4D /* Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +486,42 @@
 				7CD7B3341DA8EDDA00704D4D /* AnimationViewController.m */,
 			);
 			name = Animation;
+			sourceTree = "<group>";
+		};
+		7CD8EF861DB9EBFB0019FFF0 /* mapblood */ = {
+			isa = PBXGroup;
+			children = (
+				7CD8EF871DB9EBFB0019FFF0 /* blood_bk.tga */,
+				7CD8EF881DB9EBFB0019FFF0 /* blood_dn.tga */,
+				7CD8EF891DB9EBFB0019FFF0 /* blood_ft.tga */,
+				7CD8EF8A1DB9EBFB0019FFF0 /* blood_lf.tga */,
+				7CD8EF8B1DB9EBFB0019FFF0 /* blood_rt.tga */,
+				7CD8EF8C1DB9EBFB0019FFF0 /* blood_up.tga */,
+				7CD8EF8D1DB9EBFB0019FFF0 /* license.txt */,
+				7CD8EF8E1DB9EBFB0019FFF0 /* mp_blood.shader */,
+				7CD8EF8F1DB9EBFB0019FFF0 /* readme.txt */,
+			);
+			path = mapblood;
+			sourceTree = "<group>";
+		};
+		7CD8EF991DB9EC010019FFF0 /* picture */ = {
+			isa = PBXGroup;
+			children = (
+				7C356BED1DA9E27E00999DAE /* texture256x256.jpg */,
+				7CD7B2FC1DA8E3FC00704D4D /* picture256x256.png */,
+				7CD7B2FD1DA8E3FC00704D4D /* mutpicture256x256.png */,
+				7CD7B2FF1DA8E3FC00704D4D /* Earth512x256.jpg */,
+			);
+			name = picture;
+			sourceTree = "<group>";
+		};
+		7CF4766E1DB5FAD600844A7C /* LightMaterial */ = {
+			isa = PBXGroup;
+			children = (
+				7CF4766F1DB5FB4D00844A7C /* LightMaterialViewController.h */,
+				7CF476701DB5FB4D00844A7C /* LightMaterialViewController.m */,
+			);
+			name = LightMaterial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -570,7 +633,12 @@
 			files = (
 				7C356C1B1DAA3E5A00999DAE /* LOGOShader.vsh in Resources */,
 				7CD7B2CF1DA8E29200704D4D /* LaunchScreen.storyboard in Resources */,
+				7CD8EF921DB9EBFB0019FFF0 /* blood_ft.tga in Resources */,
 				7C356C131DAA252100999DAE /* MultipleTextureShader.vsh in Resources */,
+				7CD8EF931DB9EBFB0019FFF0 /* blood_lf.tga in Resources */,
+				7CD8EF981DB9EBFB0019FFF0 /* readme.txt in Resources */,
+				7CD8EF951DB9EBFB0019FFF0 /* blood_up.tga in Resources */,
+				7CD8EF941DB9EBFB0019FFF0 /* blood_rt.tga in Resources */,
 				7CD7B2CC1DA8E29200704D4D /* Assets.xcassets in Resources */,
 				7C356C121DAA252100999DAE /* MultipleTextureShader.fsh in Resources */,
 				7CD7B3011DA8E3FC00704D4D /* mutpicture256x256.png in Resources */,
@@ -580,8 +648,12 @@
 				7CD7B30B1DA8E42500704D4D /* CubeShader.vsh in Resources */,
 				7C356C091DAA16DC00999DAE /* TextureShader.fsh in Resources */,
 				7CD7B3031DA8E3FC00704D4D /* Earth512x256.jpg in Resources */,
+				7CD8EF901DB9EBFB0019FFF0 /* blood_bk.tga in Resources */,
 				7CD7B30F1DA8E42500704D4D /* HelloShader.vsh in Resources */,
+				7CD8EF911DB9EBFB0019FFF0 /* blood_dn.tga in Resources */,
 				7C356C071DAA16D800999DAE /* TextureShader.vsh in Resources */,
+				7CD8EF961DB9EBFB0019FFF0 /* license.txt in Resources */,
+				7CD8EF971DB9EBFB0019FFF0 /* mp_blood.shader in Resources */,
 				7CD7B2C71DA8E29200704D4D /* Main.storyboard in Resources */,
 				7CD7B3001DA8E3FC00704D4D /* picture256x256.png in Resources */,
 				7CD7B3101DA8E42500704D4D /* HelloShader.fsh in Resources */,
@@ -622,9 +694,11 @@
 				7CD7B3251DA8E5F100704D4D /* QuadrilateralViewController.m in Sources */,
 				7CD7B32E1DA8E62300704D4D /* MultipleTextureViewController.m in Sources */,
 				7C356C051DAA0EB500999DAE /* CubeGLSLViewController.m in Sources */,
+				7CF476711DB5FB4D00844A7C /* LightMaterialViewController.m in Sources */,
 				7CD7B3221DA8E5E400704D4D /* TriangleViewController.m in Sources */,
 				7CD7B2CA1DA8E29200704D4D /* CCOpenGLES.xcdatamodeld in Sources */,
 				7CD7B2F81DA8E32400704D4D /* TextureManager.m in Sources */,
+				7CF4766D1DB5FAAC00844A7C /* SkyboxViewController.m in Sources */,
 				7CD7B2BE1DA8E29200704D4D /* main.m in Sources */,
 				7C356C0C1DAA208C00999DAE /* TextureGLSLViewController.m in Sources */,
 				7CD7B2F51DA8E31100704D4D /* ShaderManager.m in Sources */,
@@ -778,6 +852,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9C283KM7PP;
+				ENABLE_BITCODE = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = CCOpenGLES/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyd.ios.CCOpenGLES;
@@ -790,6 +868,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9C283KM7PP;
+				ENABLE_BITCODE = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = CCOpenGLES/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyd.ios.CCOpenGLES;

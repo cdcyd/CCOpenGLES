@@ -32,15 +32,16 @@
                           @"TextureViewController.纹    理  GLKit",
                           @"TexturePracticeViewController.纹理练习  GLKit",
                           @"MultipleTextureViewController.多重纹理  GLKit",
-                          @"LightViewController.光    照  GLKit"],
+                          @"LightViewController.光    照  GLKit",
+                          @"LightMaterialViewController.材质光照  GLKit",
+                          @"SkyboxViewController.天 空 盒  GLKit"],
                         @[@"TriangleGLSLViewController.三角形  GLSL",
                           @"QuadrilateralGLSLViewController.四边形  GLSL",
                           @"AnimationGLSLViewController.动    画  GLSL",
                           @"CubeGLSLViewController.立方体  GLSL",
                           @"LOGOGLSLViewController.LOGO   GLSL",
                           @"TextureGLSLViewController.纹    理  GLSL",
-                          @"MultipleTextureGLSLViewController.多重纹理  GLSL",
-                          @"LightGLSLViewController.光    照  GLSL"]];
+                          @"MultipleTextureGLSLViewController.多重纹理  GLSL"]];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
