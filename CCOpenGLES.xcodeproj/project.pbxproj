@@ -316,8 +316,8 @@
 		7CD7B2F91DA8E33100704D4D /* VertexData */ = {
 			isa = PBXGroup;
 			children = (
-				7C279ADC1DB85D9B00C8D238 /* sphereLight.h */,
 				7CD7B2FA1DA8E37900704D4D /* sphere.h */,
+				7C279ADC1DB85D9B00C8D238 /* sphereLight.h */,
 			);
 			name = VertexData;
 			sourceTree = "<group>";
@@ -334,16 +334,16 @@
 		7CD7B3041DA8E41800704D4D /* GLSL */ = {
 			isa = PBXGroup;
 			children = (
-				7C356C111DAA252100999DAE /* MultipleTextureShader.vsh */,
-				7C356C101DAA252100999DAE /* MultipleTextureShader.fsh */,
-				7C356C061DAA16D800999DAE /* TextureShader.vsh */,
-				7C356C081DAA16DC00999DAE /* TextureShader.fsh */,
-				7C356C181DAA3E5A00999DAE /* LOGOShader.fsh */,
-				7C356C191DAA3E5A00999DAE /* LOGOShader.vsh */,
-				7CD7B3051DA8E42500704D4D /* CubeShader.vsh */,
-				7CD7B3061DA8E42500704D4D /* CubeShader.fsh */,
-				7CD7B3091DA8E42500704D4D /* HelloShader.vsh */,
 				7CD7B30A1DA8E42500704D4D /* HelloShader.fsh */,
+				7CD7B3091DA8E42500704D4D /* HelloShader.vsh */,
+				7CD7B3061DA8E42500704D4D /* CubeShader.fsh */,
+				7CD7B3051DA8E42500704D4D /* CubeShader.vsh */,
+				7C356C191DAA3E5A00999DAE /* LOGOShader.vsh */,
+				7C356C181DAA3E5A00999DAE /* LOGOShader.fsh */,
+				7C356C081DAA16DC00999DAE /* TextureShader.fsh */,
+				7C356C061DAA16D800999DAE /* TextureShader.vsh */,
+				7C356C101DAA252100999DAE /* MultipleTextureShader.fsh */,
+				7C356C111DAA252100999DAE /* MultipleTextureShader.vsh */,
 			);
 			name = GLSL;
 			sourceTree = "<group>";
@@ -351,17 +351,17 @@
 		7CD7B3111DA8E43B00704D4D /* VCGLKit */ = {
 			isa = PBXGroup;
 			children = (
-				7C942D0A1DB470E3004124E6 /* Skybox */,
-				7CF4766E1DB5FAD600844A7C /* LightMaterial */,
 				7CD7B3181DA8E4D600704D4D /* Light */,
-				7CD7B31D1DA8E52300704D4D /* MultipleTexture */,
-				7C356BF11DA9E86300999DAE /* TexturePractice */,
-				7CD7B3161DA8E4AC00704D4D /* Texture */,
-				7C356BF51DA9E9D700999DAE /* LOGO */,
 				7CD7B3151DA8E49A00704D4D /* Cube */,
+				7C356BF51DA9E9D700999DAE /* LOGO */,
+				7C942D0A1DB470E3004124E6 /* Skybox */,
+				7CD7B3161DA8E4AC00704D4D /* Texture */,
+				7CD7B3131DA8E46C00704D4D /* Triangle */,
 				7CD7B3321DA8EDB400704D4D /* Animation */,
 				7CD7B3141DA8E47700704D4D /* Quadrilateral */,
-				7CD7B3131DA8E46C00704D4D /* Triangle */,
+				7CF4766E1DB5FAD600844A7C /* LightMaterial */,
+				7CD7B31D1DA8E52300704D4D /* MultipleTexture */,
+				7C356BF11DA9E86300999DAE /* TexturePractice */,
 			);
 			name = VCGLKit;
 			sourceTree = "<group>";
@@ -369,13 +369,13 @@
 		7CD7B3121DA8E44F00704D4D /* VCGLSL */ = {
 			isa = PBXGroup;
 			children = (
-				7CD7B31E1DA8E58F00704D4D /* MultipleTexture */,
-				7CD7B31C1DA8E51400704D4D /* Texture */,
-				7C356C141DAA3C8000999DAE /* LOGO */,
 				7CD7B31B1DA8E50F00704D4D /* Cube */,
+				7C356C141DAA3C8000999DAE /* LOGO */,
+				7CD7B31C1DA8E51400704D4D /* Texture */,
+				7CD7B3191DA8E50500704D4D /* Triangle */,
 				7C356C021DAA0E0100999DAE /* Animation */,
 				7CD7B31A1DA8E50A00704D4D /* Quadrilateral */,
-				7CD7B3191DA8E50500704D4D /* Triangle */,
+				7CD7B31E1DA8E58F00704D4D /* MultipleTexture */,
 			);
 			name = VCGLSL;
 			sourceTree = "<group>";
@@ -491,15 +491,15 @@
 		7CD8EF861DB9EBFB0019FFF0 /* mapblood */ = {
 			isa = PBXGroup;
 			children = (
-				7CD8EF871DB9EBFB0019FFF0 /* blood_bk.tga */,
-				7CD8EF881DB9EBFB0019FFF0 /* blood_dn.tga */,
 				7CD8EF891DB9EBFB0019FFF0 /* blood_ft.tga */,
 				7CD8EF8A1DB9EBFB0019FFF0 /* blood_lf.tga */,
 				7CD8EF8B1DB9EBFB0019FFF0 /* blood_rt.tga */,
+				7CD8EF871DB9EBFB0019FFF0 /* blood_bk.tga */,
+				7CD8EF881DB9EBFB0019FFF0 /* blood_dn.tga */,
 				7CD8EF8C1DB9EBFB0019FFF0 /* blood_up.tga */,
 				7CD8EF8D1DB9EBFB0019FFF0 /* license.txt */,
-				7CD8EF8E1DB9EBFB0019FFF0 /* mp_blood.shader */,
 				7CD8EF8F1DB9EBFB0019FFF0 /* readme.txt */,
+				7CD8EF8E1DB9EBFB0019FFF0 /* mp_blood.shader */,
 			);
 			path = mapblood;
 			sourceTree = "<group>";
@@ -507,10 +507,10 @@
 		7CD8EF991DB9EC010019FFF0 /* picture */ = {
 			isa = PBXGroup;
 			children = (
+				7CD7B2FF1DA8E3FC00704D4D /* Earth512x256.jpg */,
 				7C356BED1DA9E27E00999DAE /* texture256x256.jpg */,
 				7CD7B2FC1DA8E3FC00704D4D /* picture256x256.png */,
 				7CD7B2FD1DA8E3FC00704D4D /* mutpicture256x256.png */,
-				7CD7B2FF1DA8E3FC00704D4D /* Earth512x256.jpg */,
 			);
 			name = picture;
 			sourceTree = "<group>";

@@ -7,8 +7,8 @@ varying  vec4 vColor;
 uniform sampler2D uTexture0;
 uniform sampler2D uTexture1;
 
-void main(){
-    
+void main()
+{
     vec4 texel0 = texture2D(uTexture0, vTexCoord0);
     vec4 texel1 = texture2D(uTexture1, vTexCoord1);
     

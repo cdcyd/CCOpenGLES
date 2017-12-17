@@ -5,8 +5,8 @@ varying  vec4 vColor;
 
 uniform mat4 uModelViewProjectionMatrix;
 
-void main (){
-    
+void main ()
+{
     vColor = aColor;
 
     gl_Position = uModelViewProjectionMatrix * aPosition;
